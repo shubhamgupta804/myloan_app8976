@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+   body {
+  background-color: #e1e8e3; /* Light gray background */
+  color: #444; /* Dark gray text */
+   }
+
+   input[type=text] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    width: 300px;
+    outline: none;
+  }
+  .centered-heading {
+    text-align: center; /* Center align the text */
+    background-color: #f2f2f2; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    padding: 10px; /* Padding around the text */
+    border: 2px solid #3498db; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    width: 500px; /* Width of the heading */
+    margin: 0 auto; /* Center align horizontally */
+  }
+  .form{
+    width: 25%;
+    background-color: green;
+    padding: 10px; /* Padding around the text */
+    border: 2px solid #3498db; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    width: 500px; /* Width of the heading */
+    margin: 0 auto;
+  }
+
+
+</style>
+</head>
+<body >
+
+    <div class="container">
+                  
+        <img src="https://t4.ftcdn.net/jpg/01/83/77/65/360_F_183776586_ETr3Lg7pmP2bw0dF2vyNlBaf93eM5TaA.jpg" class="rounded-circle" alt="Cinque Terre" width="150" height="150"><br><br>
+        <h2 class="btn btn-primary btn-lg">Go Loan</h2>
+         
+      </div>
+      
+      <h1 class="centered-heading">Check Your Cibil Status</h1><br><br>
+      <div class="form">
+<div class="m-3">
+   <!-- Input box for PAN Card -->
+<center><h3><label for="panInput"class="text-dark">Enter PAN Card Number:</label></h3><br>
+<input type="text" id="panInput" placeholder="ABCDE1234F" maxlength="10" name="pan">
+<button onclick="validatePAN()"><a href="/kyc">Next</a></button>
+</center>
+</div>
+</div><br><br>
+<div class="bg-info text-dark"><marquee behavior="alternate" direction="left">Click this Next button and Go for KYC</marquee></div>
+
+<!-- <div class="container">
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <option selected>Choose your Loan amount</option>
+    <option value="1">20000</option>
+    <option value="2">50000</option>
+    <option value="3">100000</option>
+  </select>
+
+</div>   -->
+  
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br>
+    
+<!-- Script for PAN Card validation -->
+<script>
+    function validatePAN() {
+        var panNumber = document.getElementById("panInput").value.trim();
+        var panRegex = /[A-Z]{5}[0-9]{4}[A-Z]{1}/;
+    
+        if (panRegex.test(panNumber)) {
+            //alert("Valid PAN Card number.");
+            Swal.fire({
+      title: "Your cibil score is 760",
+      text: "Finally you are eligible for the Loan",
+      icon: "success"
+    });
+            } else {
+            // alert("Invalid PAN Card number. Please enter a valid PAN.");
+            Swal.fire("Invalid PAN Card number. Please enter a valid PAN.");
+        }
+    }
+    </script>
+    
+</body>
+</html>
